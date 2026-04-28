@@ -199,9 +199,18 @@ summary {
 .marquee-track {
   display: flex;
   width: max-content;
-  gap: 6rem;
+  gap: 5rem;
   align-items: center;
-  animation: nanuMarquee 35s linear infinite;
+  /* Mobile-first: faster on narrow viewports so logos don't feel
+     stranded between each other. Desktop override below. */
+  animation: nanuMarquee 18s linear infinite;
+}
+
+/* ≥768px: slow back to the elegant desktop pace */
+@media (min-width: 768px) {
+  .marquee-track {
+    animation-duration: 35s;
+  }
 }
 
 /* Pause on hover only on devices that actually support hover */

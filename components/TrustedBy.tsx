@@ -29,7 +29,7 @@ function LogoItem({
       <img
         src={client.src}
         alt={decorative ? "" : client.alt}
-        className="logo-monochrome h-[60px] w-auto select-none"
+        className="logo-monochrome h-[50px] w-auto select-none"
         draggable={false}
       />
     </li>
@@ -43,7 +43,7 @@ export function TrustedBy() {
       aria-labelledby="trusted-heading"
       className="bg-hueso"
     >
-      <div className="container-nanu py-20">
+      <div className="container-nanu py-16">
         <Reveal>
           <div className="flex flex-col items-center text-center">
             <SectionEyebrow>
