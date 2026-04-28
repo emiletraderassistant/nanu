@@ -11,10 +11,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "nanu — Marketing for complex industries",
+  title: "nanu — Strategy first. Always.",
   description:
-    "A digital marketing agency specialized in fintech, blockchain, B2B industrial, and premium construction. Strategy, not shortcuts.",
+    "Marketing where others don't dare. Strategy first for technical and regulated brands.",
   metadataBase: new URL("https://nanugroup.com"),
+  icons: {
+    icon: [
+      { url: "/assets/favicon/favicon.ico" },
+      { url: "/assets/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/assets/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/assets/favicon/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/assets/favicon/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

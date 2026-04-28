@@ -1,0 +1,12 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo cuadrado redondeado tinta -->
+  <rect width="512" height="512" rx="87" ry="87" fill="#1D1D1F"/>
+  <!-- Letra "n" en hueso con peso bold -->
+  <text x="155" y="345" 
+        font-family="Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" 
+        font-weight="700" 
+        font-size="320" 
+        fill="#F9F6F0">n</text>
+  <!-- Punto azul eléctrico, alineado con la base de la n -->
+  <circle cx="370" cy="318" r="36" fill="#4F46E5"/>
+</svg>
