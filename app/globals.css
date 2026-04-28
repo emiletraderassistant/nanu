@@ -79,6 +79,11 @@
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+@keyframes nanuModalOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(8px) scale(0.98); }
+}
+
 .nanu-fade-in {
   animation: nanuFadeIn 180ms ease-out both;
 }
@@ -87,9 +92,14 @@
   animation: nanuModalIn 220ms ease-out both;
 }
 
+.nanu-modal-out {
+  animation: nanuModalOut 220ms ease-out both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .nanu-fade-in,
-  .nanu-modal-in {
+  .nanu-modal-in,
+  .nanu-modal-out {
     animation: none;
   }
 }

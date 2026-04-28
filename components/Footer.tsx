@@ -9,11 +9,6 @@ const NAV_LINKS = [
   { label: "Contact", href: "/#contact" },
 ];
 
-const SOCIAL_LINKS = [
-  { label: "LinkedIn", href: "#" },
-  { label: "X", href: "#" },
-];
-
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -22,7 +17,7 @@ export function Footer() {
        the dark Final CTA without a harsh light/dark slam. */
     <footer className="border-t border-piedra bg-hueso">
       <div className="container-nanu pt-20 pb-10 sm:pt-24">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-10">
+        <div className="grid grid-cols-1 gap-14 md:grid-cols-2 md:gap-x-24 lg:gap-x-32">
           <div>
             <Logo size="text-2xl" />
             <p className="mt-5 max-w-xs text-sm leading-[1.65] text-pizarra">
@@ -46,22 +41,6 @@ export function Footer() {
               ))}
             </ul>
           </nav>
-
-          <div>
-            <p className="eyebrow">Elsewhere</p>
-            <ul className="mt-5 space-y-3">
-              {SOCIAL_LINKS.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-pizarra transition-colors duration-200 hover:text-electrico"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-3 border-t border-tinta/[0.08] pt-6 text-xs text-pizarra sm:flex-row sm:items-center">
