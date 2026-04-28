@@ -143,3 +143,88 @@ summary::-webkit-details-marker {
 summary {
   list-style: none;
 }
+
+/* ─────────────────────────────────────────────────────────────
+ * Trusted by — marquee + monochrome logo cast
+ *
+ * Logos are black-on-transparent PNGs. The filter chain below
+ * converts them to a pizarra-toned grey so they read as quiet
+ * client marks rather than competing brand assets. The chain is
+ * declared once on the class and reused on hover via a CSS var.
+ *
+ * The marquee track holds the original 4 logos plus a duplicated
+ * set; translating the track from 0 → -50% lands the duplicate
+ * exactly where the original started, producing a seamless loop
+ * with no visual jump.
+ * ───────────────────────────────────────────────────────────── */
+.logo-monochrome {
+  --logo-filter: brightness(0) saturate(100%) invert(36%) sepia(8%)
+    saturate(540%) hue-rotate(346deg) brightness(95%) contrast(86%);
+  filter: var(--logo-filter);
+  opacity: 0.6;
+  transition: opacity 200ms ease-out, filter 200ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .logo-monochrome:hover {
+    opacity: 1;
+    filter: var(--logo-filter) brightness(1.1);
+  }
+}
+
+@keyframes nanuMarquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee {
+  overflow: hidden;
+  /* Soft fade at both edges so logos enter/exit instead of cutting */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 5rem;
+  align-items: center;
+  animation: nanuMarquee 35s linear infinite;
+}
+
+/* Pause on hover only on devices that actually support hover */
+@media (hover: hover) and (pointer: fine) {
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .marquee-track {
+    animation: none;
+    transform: none;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  /* Hide the duplicate set so static view shows 4 logos, not 8 */
+  .marquee-track > [aria-hidden="true"] {
+    display: none;
+  }
+}
