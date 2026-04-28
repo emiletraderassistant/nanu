@@ -199,7 +199,7 @@ summary {
 .marquee-track {
   display: flex;
   width: max-content;
-  gap: 5rem;
+  gap: 6rem;
   align-items: center;
   animation: nanuMarquee 35s linear infinite;
 }
